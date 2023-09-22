@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using VendorOrder.Models;
+using System;
 using System.Collections.Generic;
 
 namespace VendorOrder.Controllers
@@ -24,5 +25,14 @@ namespace VendorOrder.Controllers
       model.Add("vendor", vendor);
       return View(model);
     }
+
+    [HttpPost("/vendors/{vendorId}/orders")]
+        public ActionResult Create(int vendorId, string orderName, string orderDescription, decimal orderPrice, DateTime orderDate)
+        {
+            Vendor vendor = Vendor.Find(vendorId);
+            Order newOrder = new Order(orderName, orderDescription, orderPrice, orderDate);
+            vendor.AddOrder(newOrder);
+            return RedirectToAction("Show", "Vendors", new { vendorId = vendor.Id });
+        }
   }
 }

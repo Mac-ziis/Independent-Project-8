@@ -39,17 +39,27 @@ namespace VendorOrder.Controllers
       return View(model);
     }
 
+    // [HttpPost("/vendors/{vendorId}/orders")]
+    // public ActionResult Create(int vendorId, string orderDescription)
+    // {
+    //   Dictionary<string, object> model = new Dictionary<string, object>();
+    //   Vendor foundVendor = Vendor.Find(vendorId);
+    //   Order newOrder = new Order(orderDescription);
+    //   foundVendor.AddOrder(newOrder);
+    //   List<Order> vendorOrders = foundVendor.Orders;
+    //   model.Add("orders", vendorOrders);
+    //   model.Add("vendor", foundVendor);
+    //   return View("Show", model);
+    // }
+
     [HttpPost("/vendors/{vendorId}/orders")]
-    public ActionResult Create(int vendorId, string orderDescription)
+    public ActionResult Create(int vendorId, string orderName, string orderDescription, decimal orderPrice, DateTime orderDate)
     {
-      Dictionary<string, object> model = new Dictionary<string, object>();
       Vendor foundVendor = Vendor.Find(vendorId);
-      Order newOrder = new Order(orderDescription);
+      Order newOrder = new Order(orderName, orderDescription, orderPrice, orderDate);
       foundVendor.AddOrder(newOrder);
-      List<Order> vendorOrders = foundVendor.Orders;
-      model.Add("orders", vendorOrders);
-      model.Add("vendor", foundVendor);
-      return View("Show", model);
+
+      return RedirectToAction("Show", new { id = vendorId });
     }
 
   }
