@@ -15,7 +15,6 @@ namespace VendorOrder
 
       app.UseHttpsRedirection();
       app.UseStaticFiles();
-
       app.UseRouting();
 
       app.MapControllerRoute(
