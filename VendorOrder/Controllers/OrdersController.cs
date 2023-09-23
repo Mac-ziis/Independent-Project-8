@@ -27,7 +27,7 @@ namespace VendorOrder.Controllers
     }
 
     [HttpPost("/vendors/{vendorId}/orders/create")] 
-    public ActionResult Create(int vendorId, string orderName, string orderDescription, decimal orderPrice, DateTime orderDate)
+    public ActionResult CreateOrder(int vendorId, string orderName, string orderDescription, decimal orderPrice, DateTime orderDate)
     {
       Vendor vendor = Vendor.Find(vendorId);
       Order newOrder = new Order(orderName, orderDescription, orderPrice, orderDate);

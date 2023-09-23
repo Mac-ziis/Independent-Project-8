@@ -28,19 +28,37 @@ namespace VendorOrder.Controllers
       return RedirectToAction("Index");
     }
 
+    // [HttpGet("/vendors/{id}")]
+    // public ActionResult Show(int id)
+    // {
+    //   Dictionary<string, object> model = new Dictionary<string, object>();
+    //   Vendor selectedVendor = Vendor.Find(id);
+    //   List<Order> vendorOrders = selectedVendor.Orders;
+    //   model.Add("vendor", selectedVendor);
+    //   model.Add("orders", vendorOrders);
+    //   return View(model);
+    // }
+
     [HttpGet("/vendors/{id}")]
     public ActionResult Show(int id)
     {
-      Dictionary<string, object> model = new Dictionary<string, object>();
       Vendor selectedVendor = Vendor.Find(id);
+
+      if (selectedVendor == null)
+      {
+        return NotFound(); // Return a 404 status code.
+      }
+
+      Dictionary<string, object> model = new Dictionary<string, object>();
       List<Order> vendorOrders = selectedVendor.Orders;
       model.Add("vendor", selectedVendor);
       model.Add("orders", vendorOrders);
       return View(model);
     }
 
+
     [HttpPost("/vendors/{vendorId}/orders/create")]
-    public ActionResult CreateOrder(int vendorId, string orderName, string orderDescription, decimal orderPrice, DateTime orderDate)
+    public ActionResult CreateVendor(int vendorId, string orderName, string orderDescription, decimal orderPrice, DateTime orderDate)
     {
       Vendor foundVendor = Vendor.Find(vendorId);
       Order newOrder = new Order(orderName, orderDescription, orderPrice, orderDate);
