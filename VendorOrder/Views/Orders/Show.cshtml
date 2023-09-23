@@ -5,8 +5,13 @@
 @if (Model["vendor"] != null && Model["order"] != null)
 {
     <h1>Vendor Order Details: </h1>
-    <h2>@Model["order"].Description</h2>
-    <h3>Vendor: @Model["vendor"].Name</h3>
+    <h2>Vendor: @Model["vendor"].Name</h2>
+    <h3>@Model["order"].Description</h3>
+
+    <p>Order Name: @Model["order"].Name</p>
+    <p>Order Price: @Model["order"].Price</p>
+    <p>Order Date: @Model["order"].OrderDate.ToShortDateString()</p>
+
     <a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order</a>
     <a href='/vendors'>View all vendors</a>
 }
@@ -15,3 +20,4 @@ else
     <p>Vendor or order not found.</p>
     <a href='/vendors'>View all vendors</a>
 }
+

@@ -26,7 +26,7 @@ namespace VendorOrder.Controllers
       return View(model);
     }
 
-    [HttpPost("/vendors/{vendorId}/orders/create")] 
+    [HttpPost("/vendors/{vendorId}/orders/createorder")] 
     public ActionResult CreateOrder(int vendorId, string orderName, string orderDescription, decimal orderPrice, DateTime orderDate)
     {
       Vendor vendor = Vendor.Find(vendorId);
