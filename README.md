@@ -1,19 +1,23 @@
-# _{Application Name}_
+# _Pierre's Vendor Order Tracker_
 
-#### By _**{List of contributors}**_
+#### By _**Mac Granger**_
 
-#### _{Brief description of application}_
+#### _MVC Application to help Pierre keep track of current vendors and their orders._
 
 ## Technologies Used
 
-* _List all_
-* _the major technologies_
-* _you used in your project_
-* _here_
+* _Github_
+* _C#_
+* _ASP.NET Core MVC framework_
+* _Visual Stuio Code_
+* _HTML_
+* _CSS_
+* _net6.0_
+* _MSTest_
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+_This MVC C# web application will allow the user to input vendors and their orders so as to keep track of current business interests. When adding vendors the user will be prompted for a name and the description. When adding orders for those vendors the user will be prompted for the order name, description, price, and date. This will allow the user to maintain organized business relationships._
 
 ## Setup/Installation Requirements
 
@@ -23,15 +27,28 @@ _{This is a detailed description of your application. Give as much detail as nee
 * _Open the browser to https://localhost:5001. If you cannot access localhost:5001 it is likely because you have not configured a .NET developer security certificate for HTTPS._
 * _To run tests, navigate to the tests directory called "VendorOrder.Tests" and run dotnet test in the comand line._
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this application depends on? We recommend deleting the project from your desktop, re-cloning the project from GitHub, and writing down all the steps necessary to get the project working again.}_
-
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* _No known bugs._
 
 ## License
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+Copyright (c) 2023 copyright Mackenzie Granger
 
-Copyright (c) _date_ _author name(s)_
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
